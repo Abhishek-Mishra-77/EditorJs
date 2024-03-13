@@ -16,6 +16,7 @@
   </head>
   <body>
     <div class="main_editor">
+      <!-- FIRST ONE   -->
       <div class="container disable">
         <h2>Easy Image Editor</h2>
         <div class="wrapper">
@@ -55,7 +56,11 @@
             </div>
           </div>
           <div class="preview-img">
-            <img src="image/previewImage.svg" alt="preview-img" />
+            <img
+              src="image/previewImage.svg"
+              alt="preview-img"
+              draggable="true"
+            />
           </div>
         </div>
         <div class="controls">
@@ -68,11 +73,77 @@
           </div>
         </div>
       </div>
+      <div class="main_display">
+        <div class="image_canvas"></div>
+      </div>
+      <!-- SECOND ONE   -->
+      <div class="container">
+        <div class="advanceEditor_main">
+          <section class="tool-board">
+            <div class="row">
+              <label class="title">Shapes</label>
+              <ul class="options">
+                <li class="option">
+                  <img src="image/rectangle.svg" alt="rectangle" />
+                  <span>Rectangle</span>
+                </li>
+                <li class="option">
+                  <img src="image/circle.svg" alt="circle" />
+                  <span>Circle</span>
+                </li>
+                <li class="option">
+                  <img src="image/triangle.svg" alt="triangle" />
+                  <span>Triangle</span>
+                </li>
+                <li class="option">
+                  <input type="checkbox" id="fill-color" />
+                  <label for="fill-color">Fill color</label>
+                </li>
+              </ul>
+            </div>
+            <div class="row">
+              <label class="title">Options</label>
+              <ul class="options">
+                <li class="option active">
+                  <img src="image/brush.svg" alt="brush" />
+                  <span>Brush</span>
+                </li>
+                <li class="option">
+                  <img src="image/eraser.svg" alt="eraser" />
+                  <span>Eraser</span>
+                </li>
+                <li class="option">
+                  <input type="range" id="size-slider" />
+                </li>
+              </ul>
+            </div>
+            <div class="row colors">
+              <label class="title">Colors</label>
+              <ul class="options">
+                <li class="option"></li>
+                <li class="option selected"></li>
+                <li class="option"></li>
+                <li class="option"></li>
+                <li class="option">
+                  <input type="color" id="color-picker" value="#4a98f7">
+                </li>
+              </ul>
+            </div>
+            <div class="row buttons">
+              <button class="clear-canvas">Clear Canvas</button>
+              <button class="save-img">Save As Image</button>
+            </div>
+          </section>
+          <section class="drawing-board">
+            <canvas></canvas>
+          </section>
+        </div>
+      </div>
+      <div class="main_display">
+        <div class="image_canvas"></div>
+      </div>
     </div>
 
-    <div class="main_display">
-      <div class="image_canvas"></div>
-    </div>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
