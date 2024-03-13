@@ -157,3 +157,29 @@ resetFilterBtn.addEventListener("click", resetFilter);
 saveImageBtn.addEventListener("click", saveImage);
 displayImageBtn.addEventListener("click", displayImage);
 chooseImageBtn.addEventListener("click", () => fileInput.click());
+
+// SECOND ONE
+
+let isDrawing = false;
+
+window.addEventListener("load", () => {
+  canvas1.width = canvas1.offsetWidth;
+  canvas1.width = canvas1.offsetHeight;
+});
+
+const canvas1 = document.querySelector("canvas");
+const ctx1 = canvas1.getContext("2d");
+console.log(ctx1);
+
+const startDraw = () => {
+  isDrawing = true;
+};
+
+const drawing = (e) => {
+  ctx1.lineTo(e.offsetX, e.offsetY);
+  ctx1.stroke();
+};
+
+canvas1.addEventListener("mousedown", startDraw);
+canvas1.addEventListener("mousemove", drawing);
+canvas1.addEventListener("mouseup", () => (isDrawing = false));
